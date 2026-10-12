@@ -1,0 +1,815 @@
+
+:root {
+  --blue: #1d4ed8;
+  --blue-dark: #1e3a8a;
+  --blue-light: #eff6ff;
+  --border: #dbeafe;
+  --text: #0f172a;
+  --muted: #64748b;
+  --error: #dc2626;
+  --success: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #fff;
+  color: var(--text);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--blue);
+  color: #fff;
+  padding: 12px 20px;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hello {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+h2 {
+  color: var(--blue-dark);
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 4px rgba(29, 78, 216, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(29, 78, 216, 0.12);
+  border-color: #93c5fd;
+}
+
+/* ================= SEARCH ================= */
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--blue-light);
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ================= FORMS ================= */
+
+.form-card {
+  max-width: 420px;
+  margin: 30px auto;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-card.wide {
+  max-width: 520px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+}
+
+input:focus {
+  outline: 2px solid var(--blue);
+  border-color: var(--blue);
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(29, 78, 216, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--blue);
+}
+
+.btn-light:hover {
+  background: var(--blue-light);
+}
+
+.btn-danger {
+  background: var(--error);
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn-light-border {
+  background: #fff;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+/* ================= RIDE ================= */
+
+.ride {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  animation: rideAppear 0.6s ease both;
+}
+
+.route {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.ride-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* ================= TEXT ================= */
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.center {
+  text-align: center;
+}
+
+.error {
+  color: var(--error);
+}
+
+.success {
+  color: var(--success);
+}
+
+/* ================= BADGES ================= */
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background: #dbeafe;
+  color: var(--blue-dark);
+}
+
+.badge-accepted {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-declined {
+  background: #fee2e2;
+  color: var(--error);
+}
+
+.badge-started {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.badge-completed {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-cancelled {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* ================= TAGS ================= */
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.tag {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.ml {
+  margin-left: 8px;
+}
+
+/* ================= REQUEST ================= */
+
+.req-action {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.req-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.decline-box textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.decline-box input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.reason {
+  margin: -8px 4px 14px;
+  font-size: 14px;
+}
+
+.count {
+  background: #fff;
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.card.unread {
+  border-left: 4px solid var(--blue);
+  background: var(--blue-light);
+}
+
+
+/* =========================================================
+   CINEMATIC RIDE ANIMATION
+   ========================================================= */
+
+.vehicle-scene {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    to bottom,
+    #eff6ff 0%,
+    #ffffff 65%,
+    #dbeafe 65%,
+    #bfdbfe 100%
+  );
+
+  margin-bottom: 16px;
+}
+
+/* Road */
+
+.vehicle-scene::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 18px;
+
+  height: 3px;
+
+  background: #64748b;
+
+  box-shadow:
+    0 10px 0 #94a3b8,
+    0 20px 0 #cbd5e1;
+}
+
+/* Moving road */
+
+.road-lines {
+  position: absolute;
+
+  bottom: 8px;
+  left: 0;
+
+  width: 200%;
+  height: 5px;
+
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 35px,
+    #fff 35px,
+    #fff 80px
+  );
+
+  animation: roadMove 1s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes roadMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-115px);
+  }
+}
+
+
+/* =========================================================
+   CAR
+   ========================================================= */
+
+.vehicle-car {
+  position: absolute;
+
+  z-index: 3;
+
+  left: -180px;
+  bottom: 28px;
+
+  width: 150px;
+  height: 55px;
+
+  animation:
+    carDrive 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Car roof */
+
+.vehicle-car::before {
+  content: "";
+
+  position: absolute;
+
+  left: 25px;
+  top: -25px;
+
+  width: 90px;
+  height: 35px;
+
+  background: var(--blue);
+
+  border-radius: 45px 45px 8px 8px;
+
+  box-shadow:
+    inset 0 -8px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Car body */
+
+.vehicle-car::after {
+  content: "";
+
+  position: absolute;
+
+  left: 5px;
+  top: 10px;
+
+  width: 140px;
+  height: 40px;
+
+  background: var(--blue-dark);
+
+  border-radius: 20px 25px 8px 8px;
+}
+
+/* Windows */
+
+.car-window {
+  position: absolute;
+
+  z-index: 4;
+
+  top: -18px;
+  left: 40px;
+
+  width: 28px;
+  height: 20px;
+
+  background: #dbeafe;
+
+  border-radius: 4px;
+
+  transform: skewX(-12deg);
+}
+
+.car-window.two {
+  left: 75px;
+}
+
+/* Wheels */
+
+.car-wheel {
+  position: absolute;
+
+  z-index: 5;
+
+  bottom: -5px;
+
+  width: 25px;
+  height: 25px;
+
+  background: #0f172a;
+
+  border: 5px solid #475569;
+
+  border-radius: 50%;
+
+  animation: wheelSpin 0.5s linear infinite;
+}
+
+.car-wheel.one {
+  left: 25px;
+}
+
+.car-wheel.two {
+  right: 20px;
+}
+
+/* Car movement */
+
+@keyframes carDrive {
+  0% {
+    left: -180px;
+    transform: translateY(0);
+  }
+
+  15% {
+    transform: translateY(-2px);
+  }
+
+  35% {
+    transform: translateY(1px);
+  }
+
+  50% {
+    left: 45%;
+    transform: translateY(-1px);
+  }
+
+  70% {
+    transform: translateY(1px);
+  }
+
+  100% {
+    left: calc(100% + 180px);
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   BIKE
+   ========================================================= */
+
+.vehicle-bike {
+  position: absolute;
+
+  z-index: 3;
+
+  left: -150px;
+  bottom: 30px;
+
+  width: 120px;
+  height: 75px;
+
+  animation:
+    bikeRide 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Bike frame */
+
+.vehicle-bike::before {
+  content: "";
+
+  position: absolute;
+
+  left: 25px;
+  top: 20px;
+
+  width: 70px;
+  height: 8px;
+
+  background: var(--blue-dark);
+
+  transform: rotate(-8deg);
+
+  border-radius: 5px;
+}
+
+/* Rider */
+
+.vehicle-bike::after {
+  content: "";
+
+  position: absolute;
+
+  left: 52px;
+  top: -5px;
+
+  width: 20px;
+  height: 32px;
+
+  background: var(--blue);
+
+  border-radius: 12px 12px 5px 5px;
+
+  transform: rotate(-12deg);
+}
+
+/* Bike wheels */
+
+.bike-wheel {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 42px;
+  height: 42px;
+
+  border: 5px solid #0f172a;
+
+  border-radius: 50%;
+
+  animation: wheelSpin 0.35s linear infinite;
+}
+
+.bike-wheel.one {
+  left: 5px;
+}
+
+.bike-wheel.two {
+  right: 5px;
+}
+
+/* Bike movement */
+
+@keyframes bikeRide {
+  0% {
+    left: -150px;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+
+  40% {
+    transform: translateY(2px) rotate(1deg);
+  }
+
+  60% {
+    left: 50%;
+    transform: translateY(-2px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translateY(2px) rotate(1deg);
+  }
+
+  100% {
+    left: calc(100% + 150px);
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Wheel rotation */
+
+@keyframes wheelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SPEED LINES
+   ========================================================= */
+
+.speed-lines {
+  position: absolute;
+
+  z-index: 1;
+
+  right: 20%;
+  top: 35%;
+
+  width: 120px;
+  height: 50px;
+
+  opacity: 0;
+
+  animation:
+    speedFade 3.5s ease-in-out infinite;
+}
+
+.speed-lines::before,
+.speed-lines::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  height: 2px;
+
+  background: var(--blue);
+
+  border-radius: 10px;
+}
+
+.speed-lines::before {
+  top: 10px;
+  width: 80px;
+}
+
+.speed-lines::after {
+  top: 30px;
+  width: 120px;
+}
+
+@keyframes speedFade {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  40%,
+  65% {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+
+/* =========================================================
+   RIDE ENTRANCE
+   ========================================================= */
+
+@keyframes rideAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}
+
