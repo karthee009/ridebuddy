@@ -1,13 +1,21 @@
+
+const API_BASE_URL = 'https://ridebuddies.onrender.com/api';
+
 // One helper for every backend call.
-// credentials: 'include' makes the browser send the JSESSIONID session cookie.
+// credentials: 'include' sends the JSESSIONID session cookie.
 async function request(path, options = {}) {
-  const res = await fetch('/api' + path, {
+  const res = await fetch(API_BASE_URL + path, {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });
+
   const data = res.status === 204 ? null : await res.json().catch(() => null);
-  if (!res.ok) throw new Error(data?.message || 'Something went wrong');
+
+  if (!res.ok) {
+    throw new Error(data?.message || 'Something went wrong');
+  }
+
   return data;
 }
 
